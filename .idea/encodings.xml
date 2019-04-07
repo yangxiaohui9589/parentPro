@@ -3,5 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-house-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-substitution-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/substitution-service" charset="UTF-8" />
   </component>
 </project>

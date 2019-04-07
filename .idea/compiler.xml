@@ -7,7 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-web" />
+        <module name="springcloud-eureka" />
+        <module name="springcloud-house-service" />
+        <module name="springcloud-substitution-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="substitution-service" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

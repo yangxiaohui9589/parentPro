@@ -27,6 +27,9 @@
 
     <modules>
         <module>springboot-web</module>
+        <module>springcloud-eureka</module>
+        <module>springcloud-house-service</module>
+        <module>springcloud-substitution-service</module>
     </modules>
 
     <dependencyManagement>
@@ -42,5 +45,13 @@
 
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

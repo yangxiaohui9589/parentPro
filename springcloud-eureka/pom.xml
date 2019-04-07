@@ -7,17 +7,16 @@
 		<artifactId>parentPro</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
 	<groupId>com.yxh</groupId>
-	<artifactId>springboot-web</artifactId>
+	<artifactId>springcloud-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-web</name>
+	<name>springcloud-eureka</name>
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
 
 		<dependency>
@@ -26,18 +25,10 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--实现热部署-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-
-		<!--actuator监控-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
-
 
 </project>
