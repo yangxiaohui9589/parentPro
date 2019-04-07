@@ -1,11 +1,15 @@
 package com.yxh.controller;
 
 import com.yxh.config.MyConfig;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @Description:
@@ -20,11 +24,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    private Logger logger = Logger.getLogger(HelloController.class);
+
     @Autowired
     private Environment env;
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Value("${self.hello}")
+    private String selfHello;
 
     @Autowired
     private MyConfig myConfig;
@@ -39,6 +48,10 @@ public class HelloController {
         return env.getProperty("server.port");
     }
 
+    @GetMapping("/getPropertiesByEnv")
+    public String getPropertiesByEnv(){
+        return selfHello;
+    }
     @GetMapping("/getServerPortByValue")
     public String getServerPortByValue(){
         return serverPort;
@@ -49,4 +62,25 @@ public class HelloController {
         return myConfig.getName();
     }
 
+
+    @GetMapping("/test")
+    public void test(){
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.print("2222222222222222222");
+            }
+        });
+
+        executorService.execute(()->{
+            try{
+                System.out.print("11111111111111111");
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally {
+
+            }
+        });
+    }
 }
